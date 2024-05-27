@@ -1,0 +1,10 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 26. 05. 2024
+  Bugfixes:
+    - Fixed a LUA skill issue. Should now theoretically work with any mod, but said mods may need to be added as dependencies to make this mod load after.
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 26. 05. 2024
+  Major Features:
+    - Initial release.
