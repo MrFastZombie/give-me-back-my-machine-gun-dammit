@@ -35,14 +35,13 @@ jobs:
       - name: Run a multi-line script
         run: |
           REGEX="(?<=Version: )([1-9]\.[0-9]\.[0-9])" 
-          LATEST=$(grep -m 1 -oP "$REGEX" changelog.txt) >> $GITHUB_ENV
-          echo "$LATEST" 
+          echo LATEST=$(grep -m 1 -oP "$REGEX" changelog.txt) >> $GITHUB_ENV
           zip -r "give-me-back-my-machine-gun-dammit_${LATEST}" .
 
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v3
         with:
-          name: ${{env.LATEST}}
+          name: "$LATEST"
           path: ${{github.workspace}}/*
           retention-days: 5
 
