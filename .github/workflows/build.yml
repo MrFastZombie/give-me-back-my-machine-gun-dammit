@@ -41,7 +41,7 @@ jobs:
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v3
         with:
-          name: "$LATEST"
+          name: ${{env.LATEST}}
           path: ${{github.workspace}}/*
           retention-days: 5
 
