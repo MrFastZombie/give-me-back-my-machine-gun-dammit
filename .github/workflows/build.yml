@@ -35,6 +35,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           set +x
-          REGEX="(?<=Version: )([1-9]\.[0-9]\.[0-9])"
-          grep -m 1 -oP "$REGEX" changelog.txt
-#grep -c -oP "$REGEX" changelog.txt
+          REGEX="(?<=Version: )([1-9]\.[0-9]\.[0-9])" 
+          LATEST=grep -m 1 -oP "$REGEX" changelog.txt
+
