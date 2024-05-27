@@ -41,3 +41,10 @@ jobs:
           echo "$LATEST"
           zip -r "give-me-back-my-machine-gun-dammit_${LATEST}" .
 
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v3
+        with:
+          name: release
+          path: "give-me-back-my-machine-gun-dammit_${LATEST}.zip"
+          retention-days: 5
+
