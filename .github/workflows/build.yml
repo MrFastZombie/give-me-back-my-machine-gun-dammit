@@ -45,6 +45,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: release
-          path: "give-me-back-my-machine-gun-dammit_${LATEST}.zip"
+          path: "*.zip"
           retention-days: 5
 
