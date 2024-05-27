@@ -43,6 +43,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: ${{env.LATEST}}
-          path: *
+          path: ""
           retention-days: 5
 
