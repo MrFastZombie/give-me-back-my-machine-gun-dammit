@@ -25,15 +25,15 @@ jobs:
         with:
          files: thumbnail.png info.json LICENSE changelog.txt prototypes data-final-fixes.lua
 
-      - name: Make mod folder
-        run: | 
-          mkdir ./give-me-back-my-machine-gun-dammit
-          mv $(ls --ignore=give-me-back-my-machine-gun-dammit) ./give-me-back-my-machine-gun-dammit
-
       - name: Get version number
         run: |
           REGEX="(?<=Version: )([1-9]\.[0-9]\.[0-9])" 
           echo LATEST=$(grep -m 1 -oP "$REGEX" changelog.txt) >> $GITHUB_ENV
+
+      - name: Make mod folder
+        run: | 
+          mkdir ./give-me-back-my-machine-gun-dammit
+          mv $(ls --ignore=give-me-back-my-machine-gun-dammit) ./give-me-back-my-machine-gun-dammit
 
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v3
