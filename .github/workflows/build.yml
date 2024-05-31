@@ -23,7 +23,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: Bhacaz/checkout-files@v2
         with:
-         files: thumbnail.png info.json LICENSE changelog.txt prototypes
+         files: thumbnail.png info.json LICENSE changelog.txt prototypes data-final-fixes.lua
+
+      - name: Make mod folder
+        run: | 
+          mv ./* ./give-me-back-my-machine-gun-dammit
 
       - name: Get version number
         run: |
