@@ -28,7 +28,7 @@ jobs:
       - name: Make mod folder
         run: | 
           mkdir ./give-me-back-my-machine-gun-dammit
-          mv ./* ./give-me-back-my-machine-gun-dammit
+          mv !(give-me-back-my-machine-gun-dammit) ./give-me-back-my-machine-gun-dammit
 
       - name: Get version number
         run: |
