@@ -1,1 +1,1 @@
-require("prototypes/entity/entity-update-externals")
+require("prototypes/entity")
