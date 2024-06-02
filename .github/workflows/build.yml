@@ -23,7 +23,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: Bhacaz/checkout-files@v2
         with:
-         files: thumbnail.png info.json LICENSE changelog.txt prototypes data-final-fixes.lua
+         files: thumbnail.png info.json LICENSE changelog.txt prototypes locale data-final-fixes.lua settings.lua
 
       - name: Get version number
         run: |
