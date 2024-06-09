@@ -51,6 +51,8 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: "${{env.MOD_NAME}}_${{env.LATEST}}"
-          path: ${{github.workspace}}/*
+          path: |
+            ${{github.workspace}}/*
+            !.git*
           retention-days: 5
 
