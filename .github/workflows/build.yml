@@ -1,5 +1,8 @@
 name: Build
 
+env:
+  MOD_NAME: give-me-back-my-machine-gun-dammit
+
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
@@ -21,9 +24,18 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: Bhacaz/checkout-files@v2
-        with:
-         files: thumbnail.png info.json LICENSE changelog.txt prototypes locale data-final-fixes.lua settings.lua
+      - uses: actions/checkout@v4
+        with: 
+          sparse-checkout: |
+            thumbnail.png 
+            info.json 
+            LICENSE 
+            changelog.txt 
+            prototypes 
+            locale 
+            settings.lua 
+            data-final-fixes.lua
+          sparse-checkout-cone-mode: false
 
       - name: Get version number
         run: |
@@ -32,13 +44,13 @@ jobs:
 
       - name: Make mod folder
         run: | 
-          mkdir ./give-me-back-my-machine-gun-dammit
-          mv $(ls --ignore=give-me-back-my-machine-gun-dammit) ./give-me-back-my-machine-gun-dammit
+          mkdir ./${{env.MOD_NAME}}
+          mv $(ls --ignore=${{env.MOD_NAME}}) ./${{env.MOD_NAME}}
 
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v3
         with:
-          name: "give-me-back-my-machine-gun-dammit_${{env.LATEST}}"
+          name: "${{env.MOD_NAME}}_${{env.LATEST}}"
           path: ${{github.workspace}}/*
           retention-days: 5
 
