@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 22. 12. 2024
+  Major Features:
+    - Updated to Factorio 2.0
+      - It only needed a version bump in the info.json
+  Changes:
+    - Updated locale format to fit best practices.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 01. 06. 2024
   Major Features:
