@@ -1,9 +1,9 @@
    {
      "name": "give-me-back-my-machine-gun-dammit",
-     "version": "1.1.0",
+     "version": "1.2.0",
      "title": "Give me back my machine gun dammit!",
      "author": "MrFastZombie",
-     "factorio_version": "2.0",
+     "factorio_version": "2.1",
 	 "description": "Re-adds the machine gun to tanks with AAI vehicles installed with the chaingunner. Also re-adds the flamethrower if the flame tank is installed.",
-     "dependencies": ["? aai-programmable-vehicles >= 0.8.0", "? aai-vehicles-flame-tank >= 0.6.1", "? aai-vehicles-chaingunner >= 0.7.1"]
+     "dependencies": ["? aai-programmable-vehicles >= 0.9.0", "? aai-vehicles-flame-tank >= 0.8.0", "? aai-vehicles-chaingunner >= 0.8.0"]
    }

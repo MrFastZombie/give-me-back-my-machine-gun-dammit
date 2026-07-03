@@ -10,7 +10,8 @@ tasks:
     platforms: [windows]
     cmds:
       # This command creates a symbolic link to the mod in the Factorio mods folder by making CMD launch Powershell to make it launch CMD as an administrator so it can use mklink. Fun.
-      - powershell -Command "Start-Process cmd -Verb RunAs -Argument '/c mklink /D %appdata%\Factorio\Mods\{{.MODNAME}} {{.USER_WORKING_DIR}}\..\{{.MODNAME}}'"
+      # - powershell -Command "Start-Process cmd -Verb RunAs -Argument '/c mklink /D %appdata%\Factorio\Mods\{{.MODNAME}} {{.USER_WORKING_DIR}}'"
+      - cmd /C sudo mklink /d "%APPDATA%\Factorio\Mods\{{.MODNAME}}" "{{.USER_WORKING_DIR | replace "/" "\\" }}"
   unlink:
     platforms: [windows]
     dir: '{{.APPDATA}}\Factorio\Mods'
